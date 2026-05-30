@@ -18,7 +18,7 @@ else:
       else:
         language = "English"
       chatbot = cilent.chat.completions.create(
-        model = "llama-3.3-70b-versatile",  
+        model = "Gemini 1.5 Pro",  
         messages = [{"role":"system","content":f"You are a helpful assistant for kid. Summarize the text in 3-4 sentences. You MUST respond in {language} only"},
                    {"role":"user","content":text}]
       )
