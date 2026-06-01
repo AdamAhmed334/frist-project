@@ -7,7 +7,12 @@ cilent = Groq(api_key=st.secrets["qroc_api_key"])
 uploaded_files = st.file_uploader("Upload",type = ["pdf"])
 if uploaded_files is not None:
   pdf_read = PyPDF2.pdfReader(io.BytesIO(uploaded_files.read()))
-text = st.text_area("تلخيص ما كتبت",height = 200)
+  page_text = ""
+  for page in pdf_read.pages:
+    page_text +=page.extrat_text() or ""
+else:
+  page_text = ""
+text = st.text_area("تلخيص ما كتبت",height = 200, value = page_text)
 if st.button("لخص"):
   if len(text.split()) < 10:
     st.warning("النص قصير اكتب نص اكبر")
