@@ -6,7 +6,7 @@ st.title("Adamh_app")
 cilent = Groq(api_key=st.secrets["qroc_api_key"])
 uploaded_files = st.file_uploader("Upload",type = ["pdf"])
 if uploaded_files is not None:
-  pdf_read = PyPDF2.pdfReader(io.BytesIO(uploaded_files.read()))
+  pdf_read = PyPDF2.PdfReader(io.BytesIO(uploaded_files.read()))
   page_text = ""
   for page in pdf_read.pages:
     page_text +=page.extrat_text() or ""
