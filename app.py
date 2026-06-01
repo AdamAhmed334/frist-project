@@ -6,7 +6,7 @@ cilent = Groq(api_key=st.secrets["qroc_api_key"])
 text = st.text_area("تلخيص ما كتبت",height = 200)
 if st.button("لخص"):
   if len(text.split()) < 10:
-    st.wraning("النص قصير اكتب نص اكبر")
+    st.warning("النص قصير اكتب نص اكبر")
   else:
     with st.spinner("جار تلخيص"):
       arcbic_letter = 0
