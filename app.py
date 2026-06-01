@@ -1,8 +1,10 @@
 import streamlit as st
 from groq import Groq
+import PyPDF2
+import io
 st.title("Adamh_app")
 cilent = Groq(api_key=st.secrets["qroc_api_key"])
-
+uploaded_files = st.file_uploader("Upload",type = ["pdf"])
 text = st.text_area("تلخيص ما كتبت",height = 200)
 if st.button("لخص"):
   if len(text.split()) < 10:
