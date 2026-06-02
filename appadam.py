@@ -12,7 +12,7 @@ if uploded_files is not None:
     page_text += page.extract_text() or ""
 else:
   page_text = ""
-text = st.text_area("تلخيص ما كتبت",height = 200,value = page_text)\
+text = st.text_area("تلخيص ما كتبت",height = 200,value = page_text)
 if st.button("لخص"):
   if len(text.split()) < 10:
     st.warning("النص قصير اكتب نص اكبر")
