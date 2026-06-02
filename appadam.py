@@ -1,4 +1,4 @@
-import streamlit
+import streamlit as st
 from groq import Groq
 import PyPDF2
 import io
