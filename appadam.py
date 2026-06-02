@@ -9,7 +9,7 @@ if uploaded_files is not None:
   pdfReader = PyPDF2.PdfReader(io.BytesIO(uploaded_files.read()))
   page_text = ""
   for pages in pdfReader.pages:
-    page_text += page.extract_text() or ""
+    page_text +=page.extract_text() or ""
 else:
   page_text = ""
 text = st.text_area("تلخيص ما كتبت",height = 200,value = page_text)
