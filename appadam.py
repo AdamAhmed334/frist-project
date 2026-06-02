@@ -6,7 +6,7 @@ st.title("app")
 cilent = Groq(api_key=st.secrets["qroq_key"]) 
 uploaded_files = st.file_uploader("Uplode",type =["pdf"])
 if uploaded_files is not None:
-  pdfReader = PyPDF2.pdfReader(io.BytesIO(uploaded_files.read()))
+  pdfReader = PyPDF2.PdfReader(io.BytesIO(uploaded_files.read()))
   page_text = ""
   for pages in pdf_reder.pages:
     page_text += page.extract_text() or ""
