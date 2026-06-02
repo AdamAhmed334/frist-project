@@ -1,5 +1,5 @@
 import streamlit
-import groq from Groq
+from groq import Groq
 import PyPDF2
 import io
 st.title("app")
