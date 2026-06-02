@@ -3,7 +3,7 @@ from groq import Groq
 import PyPDF2
 import io
 st.title("app")
-cilent = Groq(api_key=st.secrets["qroq_key"] 
+cilent = Groq(api_key=st.secrets["qroq_key"]) 
 uploaded_files = st.file_uploader("Uplode",type =["pdf"])
 if uploded_files is not None:
   pdf_reader = PyPDF2.pdfReader(io.BytesIO(uploaded_files.read()))
